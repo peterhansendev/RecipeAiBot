@@ -20,7 +20,7 @@ export default async function handler(req, res) {
             messages: [{ role: "user", content: text }],
             max_tokens: 512,
         });
-console.log(response)
+
         if (!response || !response.choices || response.choices.length === 0) {
             throw new Error("Invalid response from Hugging Face API.");
         }
