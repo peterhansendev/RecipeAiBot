@@ -89,7 +89,7 @@ export default function Home() {
 
   return (
     <div className="container">
-      <h1>Hugging Face AI Chat</h1>
+      <h1>Recipe AI Generator</h1>
       <form onSubmit={handleGenerate}>
         <input
           type="text"
