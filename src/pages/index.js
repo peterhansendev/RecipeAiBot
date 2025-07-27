@@ -37,7 +37,7 @@ export default function Home() {
   const [selectedSocialContext, setSelectedSocialContext] = useState("");
 
   const buildConstraints = () => {
-    let constraints = userInput;
+    let constraints = '';
     if (userRecipe) constraints += `\nOriginal Recipe to optimize:\n${userRecipe}`;
     if (selectedFlavor) constraints += `\nFlavor: ${selectedFlavor}`;
     if (selectedFeeling) constraints += `\nFeeling: ${selectedFeeling}`;
@@ -56,7 +56,7 @@ export default function Home() {
     event.preventDefault();
     setRecipeResponse("Generating recipe...");
     setStoryResponse("");
-    const recipePrompt = `Create a recipe with these constraints:\n${buildConstraints()}`;
+    const recipePrompt = `Create a recipe with this user input ${userInput}, and these constraints:\n${buildConstraints()}`;
     try {
       const recipeRes = await axios.post("/api/inference", { text: recipePrompt });
       const recipeText = recipeRes.data.response;
