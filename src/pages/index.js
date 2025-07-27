@@ -1,8 +1,9 @@
 
 import { useState } from "react";
 import axios from "axios";
-import { FlavorDropdown, FeelingDropdown } from "./api/flavors";
 import {
+  FlavorDropdown,
+  FeelingDropdown,
   SeasonDropdown,
   WeatherDropdown,
   NutritionDropdown,
@@ -11,7 +12,7 @@ import {
   BudgetDropdown,
   CulturalDropdown,
   SocialContextDropdown
-} from "./api/seasons";
+} from "../components/dropdowns";
 
 export default function Home() {
   const [userInput, setUserInput] = useState("");
@@ -93,7 +94,7 @@ export default function Home() {
       <form onSubmit={handleGenerate}>
         <input
           type="text"
-          placeholder="Ask me anything..."
+          placeholder="What do you want to cook?"
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
           required

@@ -14,7 +14,7 @@ export default async function handler(req, res) {
         if (!text || typeof text !== "string") {
             return res.status(400).json({ error: "Invalid request. 'text' field is required." });
         }
-// "google/gemma-2b-it",
+
         const response = await inference.chatCompletion({
             model: "mistralai/Mistral-7B-Instruct-v0.3",
             messages: [{ role: "user", content: text }],
